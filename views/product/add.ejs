@@ -1,0 +1,42 @@
+<%-include('../layout/header') %>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Price</label>
+                <input type="text" class="form-control" name="price">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Image</label>
+                <input type="file" class="form-control" name="avatar">
+            </div>
+            <div class="form-group">
+              <label for="">Category Id</label>
+              <select class="form-control" name="category_id" id="">
+                <% category.forEach(element => {%>
+                    <option value="<%= element.id %> "><%= element.name %> </option>
+                <%}); %> 
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Status</label>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="status" id="" value="1" checked>
+                        Hien
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="status" id="" value="0">
+                        An
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+<%-include('../layout/footer') %>
